@@ -4,10 +4,6 @@
     3. 1Panel面板部署
     4. 其他通用方式
 
-    让我为用户创建一个详细的部署指南文档。
-
-
-    现在我了解了这个项目的结构。这是一个Flask应用，需要连接PostgreSQL数据库。让我为你创建一个详细的部署指南。
 
     项目分析
 
@@ -19,29 +15,20 @@
     | 端口   | 5000                                 |
 
 
-
     部署指南
-
     方式一：宝塔面板部署
-
     1. 上传项目文件
     在宝塔中创建网站，将项目文件上传到 /www/wwwroot/token-query/
-
     2. 安装Python项目环境
     bash
     进入网站目录
     cd /www/wwwroot/token-query/
-
     创建虚拟环境
     python3 -m venv venv
-
     激活虚拟环境
     source venv/bin/activate
-
     安装依赖
     pip install -r requirements.txt
-
-
     3. 修改配置文件
     编辑 config.py，修改数据库连接信息为你的实际配置：
     python
@@ -177,32 +164,19 @@
 
     注意：需要修改 app.py 和 config.py 使用环境变量获取数据库配置
 
-
-
     方式四：直接命令行运行（开发/测试）
-
     bash
     cd /root/.hermes/plugin/token-query
-
     激活虚拟环境
     source venv/bin/activate
-
     启动应用
     python app.py
-
-
-
-
     部署后验证
-
     bash
     检查进程是否运行
     curl http://localhost:5000/
-
     或检查API接口
     curl "http://localhost:5000/api/query?key=test_key"
-
-
 
 
     常见问题
@@ -213,7 +187,3 @@
     | 端口被占用      | 更换 APP_PORT 或杀死占用进程                           |
     | 静态文件404     | 确保 static/ 和 templates/ 在项目根目录                |
     | Unicode编码错误 | 数据库连接字符串添加 client_encoding=utf8              |
-
-
-
-    需要我帮你修改配置文件以支持环境变量配置吗？这样更容易在不同环境中部署。
